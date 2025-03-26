@@ -1,0 +1,268 @@
+body {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 290px;
+    position: fixed;
+    gap: 10px;
+    background: #fff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.sidebar a {
+    color: #474444;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+    background: #229ea6;
+    color: #fff;
+}
+
+.sidebar .logo {
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    height: 150px;
+    width: 150px;
+}
+
+.content {
+    margin-left: 290px;
+    padding: 20px;
+    width: 100%;
+    transition: all 0.3s;
+    scrollbar-width: none;  
+    -ms-overflow-style: none;  
+}
+
+.sidebar-content {
+    overflow-x: hidden; 
+    overflow-y: auto;  
+}
+
+.sidebar-content::-webkit-scrollbar {
+    height: 0;
+}
+
+.sidebar-content::-webkit-scrollbar:vertical {
+    width: 8px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-content {
+    scrollbar-width: thin; 
+}
+
+.toggle-btn,
+.close-btn {
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.toggle-btn {
+    left: 15px;
+    display: none;
+}
+
+.close-btn {
+    right: 15px;
+    display: none;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -290px;
+    }
+
+    .content {
+        margin: 40px 0 0 0;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .close-btn {
+        display: none !important;
+    }
+}
+
+.package-container {
+    background-color: #083d77;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+.test-list p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.test-list i {
+    color: #ffbe00;
+    font-size: 1.5rem;
+}
+.book-btn {
+    background-color: #ffbe00;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 30px;
+    display: inline-block;
+}
+.book-btn:hover {
+    background-color: #e6a800;
+}
+.doctor-image {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.test-list h5 {
+    color: #ffbe00;
+    font-weight: bold;
+}
+
+/* Image hove effect */
+.card-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #229ea6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-container:hover .overlay {
+    opacity: 1;
+}
+
+.left-section {
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .left-section {
+        padding: 20px;
+    }
+
+    .custom-card {
+        flex-direction: column-reverse;
+    }
+
+    .swiper {
+        max-width: 100%;
+    }
+}
+
+.swiper {
+    width: 100%;
+    max-width: 1150px;
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.swiper-pagination {
+    bottom: 0 !important;
+}
+/* Hide default Swiper navigation styles */
+.swiper-button-prev,
+.swiper-button-next {
+    background: none !important;
+    border: none !important;
+    position: static !important; /* Remove Swiper's absolute positioning */
+}
+
+/* Custom button styling */
+.custom-swiper-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none !important;
+}
+
+/* Hover effect */
+.custom-swiper-button:hover {
+    background-color: #ccc !important;
+}
+
+/* Bootstrap icon styling */
+.custom-swiper-button i {
+    font-size: 20px;
+    color: #666;
+}
